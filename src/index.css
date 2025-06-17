@@ -5,3 +5,9 @@
   font-weight: 400;
   font-style: normal;
 }
+
+@layer components {
+  .container {
+    @apply mx-auto p-[1.25rem];
+  }
+}
