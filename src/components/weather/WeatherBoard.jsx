@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { WeatherContext } from "../../context";
-import AddToFavourite from "./AddToFavourite";
+import AddToFavorite from "./AddToFavorite";
 import WeatherCondition from "./WeatherCondition";
 import WeatherHeadline from "./WeatherHeadline";
 
@@ -18,7 +18,7 @@ export default function WeatherBoard() {
             <p>{loading.message}</p>
           ) : (
             <>
-              <AddToFavourite />
+              <AddToFavorite />
               <WeatherHeadline />
               <WeatherCondition />
             </>
