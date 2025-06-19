@@ -74,6 +74,7 @@ export default function useWeather() {
 
   useEffect(() => {
     setLoading({
+      ...loading,
       state: true,
       message: "Finding Location...",
     });
