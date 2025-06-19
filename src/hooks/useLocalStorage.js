@@ -9,5 +9,5 @@ export default function useLocalStorage(storageKey, defaultValue) {
     localStorage.setItem(storageKey, JSON.stringify(value));
   }, [storageKey, value]);
 
-  return { value, setValue };
+  return [value, setValue];
 }

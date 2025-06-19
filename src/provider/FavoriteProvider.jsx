@@ -1,16 +1,19 @@
 import { FavoriteContext } from "../context";
 import useLocalStorage from "../hooks/useLocalStorage";
 
-export default function FavoriteProvide({ children }) {
+export default function FavoriteProvider({ children }) {
   const [favorites, setFavorites] = useLocalStorage("favorites", []);
 
   // handle add to favorites
-  const AddToFavorites = (latitude, longitude, location) => {
-    setFavorites(...favorites, {
-      latitude: latitude,
-      longitude: longitude,
-      location: location,
-    });
+  const addToFavorites = (latitude, longitude, location) => {
+    setFavorites([
+      ...favorites,
+      {
+        latitude: latitude,
+        longitude: longitude,
+        location: location,
+      },
+    ]);
   };
 
   // handle remove location from favorites
@@ -22,7 +25,7 @@ export default function FavoriteProvide({ children }) {
 
   return (
     <FavoriteContext.Provider
-      value={{ favorites, AddToFavorites, removeFormFavorites }}
+      value={{ favorites, addToFavorites, removeFormFavorites }}
     >
       {children}
     </FavoriteContext.Provider>
